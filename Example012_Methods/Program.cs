@@ -97,15 +97,78 @@ for(int i = 2; i <= 10; i++)
 //дан текст. нужно все пробелы заменить черточками, маленькие буквы "к" заменить бальшими "К", 
 //а большие "С" заменить маленькими "с".
 
+/*
+string text = " - Я думаю, - сказал князь, улыбаясь, - что, "
+            + "ежели бы вас послали вместо нашего милого Винценгероде, "
+            + "вы бы взяли приступом согласия прусского короля. "
+            + "Вы так красноречивы. Вы дадите мне чаю? ";
 
-string text = " - Я думаю, - сказал князь, улыбаясь, - что,"
-            + "ежели бы вас послали вместо нашего милого Винценгероде,"
-            + "вы бы взяли приступом согласия прусского короля."
-            + "Вы так красноречивы. Вы дадите мне чаю?"
-            
+string Replace(string text, char oldValue, char newValue)
+{
+    string result = String.Empty;
 
+    int length = text.Length;
+    for(int i = 0; i < length; i++)
+    {
+        if(text[i] == oldValue) result = result + $"{newValue}";
+        else result = result + $"{text[i]}";
+    }
 
+    return result;
+}
 
+string newText = Replace(text, ' ', '|');
 
+Console.WriteLine(newText);
+Console.WriteLine();
+newText = Replace(newText, 'к', 'К');
+Console.WriteLine(newText);
 
+Console.WriteLine(newText);
+Console.WriteLine();
+newText = Replace(newText, 'С', 'с');
+Console.WriteLine(newText);
+*/
 
+//Задача. Упорядочить массив.
+//например 6 8 3 2 1 4 5 7 -> 1 2 3 4 5 6 7 8
+//1.найти позицию минимального элемента в неотсортированной части массива
+//2.произвести обмен этого значения со значением первой неотсортированной позиции
+//3.повторять пока есть неотсортированные элементы.
+
+/*
+int[] arr = {1, 5, 4, 3, 2, 6, 7, 1, 1};
+
+void PrintArray(int[] array)
+{
+    int count = array.Length;
+
+    for(int i = 0; i < count; i++)
+    {
+        Console.WriteLine($"{array[i]}");
+    }
+    Console.WriteLine();
+}
+
+void SelectionSort(int[] array)
+{
+    for(int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+
+        for(int j = 0; j < array.Length; j++)
+        {
+            if(array[j] < array[minPosition]) minPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
+}
+
+PrintArray(arr);
+SelectionSort(arr);
+
+PrintArray(arr);
+*/
+//что-то не так в решении, сортировка прошла, но не от меньшего к большему, а наоборот.
