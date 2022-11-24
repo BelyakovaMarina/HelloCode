@@ -136,7 +136,7 @@ Console.WriteLine(newText);
 //2.произвести обмен этого значения со значением первой неотсортированной позиции
 //3.повторять пока есть неотсортированные элементы.
 
-/*
+
 int[] arr = {1, 5, 4, 3, 2, 6, 7, 1, 1};
 
 void PrintArray(int[] array)
@@ -145,7 +145,7 @@ void PrintArray(int[] array)
 
     for(int i = 0; i < count; i++)
     {
-        Console.WriteLine($"{array[i]}");
+        Console.Write($"{array[i]}");
     }
     Console.WriteLine();
 }
@@ -156,7 +156,7 @@ void SelectionSort(int[] array)
     {
         int minPosition = i;
 
-        for(int j = 0; j < array.Length; j++)
+        for(int j = i + 1; j < array.Length; j++)
         {
             if(array[j] < array[minPosition]) minPosition = j;
         }
@@ -170,5 +170,4 @@ PrintArray(arr);
 SelectionSort(arr);
 
 PrintArray(arr);
-*/
-//что-то не так в решении, сортировка прошла, но не от меньшего к большему, а наоборот.
+
